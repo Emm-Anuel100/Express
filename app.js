@@ -1,6 +1,6 @@
 
 const express = require("express")
-const app = express(); // declaring app to be express  
+const app = express(); 
 var port = 5000;
 
 
@@ -25,15 +25,15 @@ app.get("/", function(request,response) {   // "/" index routing [home page]
 
 function sum(request,response,next) {
    console.log(1+1);
-   next()            // next function will move to the next middle ware if the given one is not found
+   next()        
 }
-app.use(sum) // [use] for setting global function
+app.use(sum) 
 
 
-app.use(express.static('contents')) // importing the content folder
+app.use(express.static('contents')) 
 
 
-app.get("/", function(request,response) {   // "/" index routing [home page]
+app.get("/", function(request,response) {   // "/" index route
    response.sendFile(__dirname+"/contents/index.html");
 })
 
